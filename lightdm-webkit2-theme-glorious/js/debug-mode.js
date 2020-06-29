@@ -50,9 +50,9 @@ class DebugMode {
 				],
 				users: [
 					{
-						display_name: 'Johnny Joestar',
+						display_name: 'Vaughn Valle',
 						username: 'tellhimyourself',
-						image: 'assets/profiles/johnnyj.jpg'
+						image: 'assets/profiles/bon.jpg'
 					},
 					{
 						display_name: 'Gyro Zepelli',
