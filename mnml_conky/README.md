@@ -1,73 +1,66 @@
-### Vision :sunny: :umbrella: :cloud: :snowflake: :snowman:
+# MNML Conky
+![Preview](https://github.com/VaughnValle/demo/blob/master/preview.png)
 
-A theme for [conky](https://github.com/brndnmtthws/conky) powered by [OpenWeatherMap](http://openweathermap.org/).
+## Description
+A clean and simple [Conky](https://github.com/brndnmtthws/conky) theme derived from [Conky Vision](https://github.com/zagortenay333/conky-Vision)
 
-It displays the **time**, **date**, **current weather**, and **forecast** for the next 4 days.
+This Conky theme shows the __time__, __date__, __current weather__, and __forecast__ for the next 4 days while keeping a minimal interface
 
----
 
-#### Compatibility:
+## Dependencies
+Depends on:
+* __git__
+* __conky__ ```1.10.x``` (build)
+* __curl__ (build)
+* __jq__ (build)
+* __gawk__ (build)
+* __[Conky Vision](https://github.com/zagortenay333/conky-Vision)__ (Conky theme)
+* __[OpenWeatherMap](http://openweathermap.org)__ (weather forecast) 
+* __[Poiret One](https://fonts.google.com/specimen/Poiret+One)__ (fonts)
 
-The latest version of this theme is on the master branch, and it supports conky `1.10.x`.
 
-For older versions, check the available [releases](../../releases).
+## Installation Steps (Ubuntu 20.04)
+1. Register an account on [OpenWeatherMap](http://openweathermap.org) to get a free private API key for weather forecasts
+2. Find your City ID from OWM's [list](http://bulk.openweathermap.org/sample/city.list.json.gz) 
+3. Update repositories with
+   
+       # apt update
+4. Install software dependencies with 
 
-For macOS port of this theme: [port](https://github.com/Conky-for-macOS/conky-Vision).
-
----
-
-### Installation
-
-You can run the `install` script, or you can do it manually:
-
-* Install **conky**, **curl** and **jq**.
-
-* Install the [Poiret One](https://www.google.com/fonts/specimen/Poiret+One) font.
-
-* Move the `.conky-vision` folder & `.conkyrc` file into your `~` dir.
-
-**NOTE** some files/folders are hidden; unhide them. :smile:
-
----
-
-### API Key
-
-For now, you need to register a private API key on [OpenWeatherMap](http://openweathermap.org/) to get weather data.
-
-Place the API key in the `template6` variable inside the `.conkyrc`file.
-
----
-
-### City
-
-[Find the ID of your city](http://bulk.openweathermap.org/sample/) and place it inside the `template7` variable inside the `.conkyrc` file.
-
----
-
-### Language
-
-By default this conky will use your default locale.
-
-Edit the `template9` variable in the `.conkyrc` file to change the language.
-
----
-
-### Units
-
-Edit the `template8` variable inside the `.conkyrc` file to change the units.
-
----
-
-### Colors
-
-* Edit the `color` variables inside the `.conkyrc` file to change **text** color.
-
-* To change the **icon** colors, use the `render-pngs` script to render a folder of icons with the desired color, then change the icon sources in the `.conkyrc` file under the `Icon Sources` section.
-
-    > * The script requires **inkscape**.
-    > * The script uses the `SVG` folder to render png's.
-    > * You should keep the size at **32(px)** for this conky.
-
----
-
-<p align="center"><img src="preview.png" id="preview"></p>
+       # apt install git conky-all curl jq gawk
+5. Install [Conky Vision](https://github.com/zagortenay333/conky-Vision), see __Installation__
+   - Clone repo with
+   
+         $ git clone https://github.com/zagortenay333/conky-Vision.git
+   - Change current directory to cloned repo with 
+   
+         $ cd conky-Vision
+   - Run ```install``` script with 
+         
+         $ ./install
+6. Install [MNML Conky](https://github.com/VaughnValle/mnml_conky)
+   - Clone repo with
+            
+         $ git clone https://github.com/VaughnValle/mnml_conky.git
+   - Change current directory to cloned repo with 
+   
+         $ cd mnml_conky
+   - Copy ```.conkyrc``` and replace the current one in your home directory with
+   
+         # cp .conkyrc /path/to/home
+   - Edit the ```.conkyrc``` file with any text editor you prefer with
+     
+     for __nano__:
+         
+         # nano /path/to/home/.conkyrc
+   - Place your OWM API key in the ```template6``` variable of the file.
+   
+         template6="[Place OWM API key here]",
+   - Place your City ID in the ```template7``` variable of the file.
+      
+         template7="[Place City ID here]",
+   - Save your changes with ```Ctrl+X```; hit ```Y ``` then ```Enter``` when prompted (for __nano__)
+   - Run [Conky](https://github.com/brndnmtthws/conky) with 
+      
+         $ conky 
+   - Enjoy :) 
